@@ -1,0 +1,56 @@
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Java CI with Maven
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK 8
+      uses: actions/setup-java@v3
+      with:
+        java-version: '8'
+        distribution: 'temurin'
+        cache: maven
+    - name: Cache local Maven repository
+      uses: actions/cache@v3
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-maven-
+    - name: Build with Maven
+      run: |
+        mvn -B package --file pom.xml
+
+    # 登录到阿里云容器镜像服务
+    - name: Login to Ali Docker
+      uses: docker/login-action@v1
+      # 配置登录信息
+      with:
+        registry: registry.cn-shanghai.aliyuncs.com
+        username: xmig6
+        password: ${{secret.ALIYUN_PASSWORD}}
+
+      # 构建镜像并上传到阿里云容器镜像仓库 (自行百度创建自己的镜像仓库)
+    - name: Build and push
+      id: docker_build
+      uses: docker/build-push-action@v2
+
+      with:
+        context: ./spring-web/spring-web-pc
+        push: true
+        tags: registry.cn-shanghai.aliyuncs.com/fuck-study/java-test:v${{ github.run_number }}
