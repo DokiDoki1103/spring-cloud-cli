@@ -43,7 +43,7 @@ jobs:
       with:
         registry: registry.cn-shanghai.aliyuncs.com
         username: xmig6
-        password: ${{secret.ALIYUN_PASSWORD}}
+        password: ${{secrets.ALIYUN_PASSWORD}}
 
       # 构建镜像并上传到阿里云容器镜像仓库 (自行百度创建自己的镜像仓库)
     - name: Build and push
