@@ -1,4 +1,4 @@
-package com.example.web.pc.controller;
+package com.example.web.gateway.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,11 +9,11 @@ import java.util.Map;
 import java.util.Random;
 
 @RestController
-@RequestMapping("/pc-service/api")
+@RequestMapping("/app-service/api")
 public class ApiController {
     @GetMapping("/hello")
     public String hello() {
-        return "Hello, pc-service";
+        return "Hello, app-service!";
     }
 
     @GetMapping(value = "/delay",produces = "application/json")

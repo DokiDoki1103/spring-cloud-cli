@@ -15,6 +15,7 @@
     <modules>
         <module>spring-web-pc</module>
         <module>spring-web-gateway</module>
+        <module>spring-web-app</module>
     </modules>
 
     <dependencies>
