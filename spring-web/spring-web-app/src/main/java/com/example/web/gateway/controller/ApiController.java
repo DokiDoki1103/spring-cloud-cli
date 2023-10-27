@@ -1,6 +1,7 @@
 package com.example.web.gateway.controller;
 
 import com.example.web.gateway.mapper.RemoteProviderService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +21,7 @@ public class ApiController {
         return "Hello, app-service!";
     }
 
-    @Resource
+    @Autowired
     private RemoteProviderService remoteProviderService;
 
     @GetMapping("/consumer")
