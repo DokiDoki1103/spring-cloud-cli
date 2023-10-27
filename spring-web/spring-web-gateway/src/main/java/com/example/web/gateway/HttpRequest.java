@@ -14,23 +14,24 @@ public class HttpRequest {
     public void send(){
         List<String> strings = new ArrayList<>();
 
-        strings.add("http://8080.grd42ecd.0hpzibea.106.15.152.33.ip.goodrain.net/app-service/api/consumer?msg=1");
-        strings.add("http://8080.grd42ecd.0hpzibea.106.15.152.33.ip.goodrain.net/app-service/api/helllo?msg=1");
-        strings.add("http://8080.grd42ecd.0hpzibea.106.15.152.33.ip.goodrain.net/app-service/api/delay?msg=1");
+        strings.add("http://8080.grd42ecd.0hpzibea.106.15.152.33.ip.goodrain.net/app-service/api/consumer");
+        strings.add("http://8080.grd42ecd.0hpzibea.106.15.152.33.ip.goodrain.net/app-service/api/helllo");
+        strings.add("http://8080.grd42ecd.0hpzibea.106.15.152.33.ip.goodrain.net/app-service/api/delay");
 
-        strings.add("http://8080.grd42ecd.0hpzibea.106.15.152.33.ip.goodrain.net/pc-service/api/helllo?msg=1");
-        strings.add("http://8080.grd42ecd.0hpzibea.106.15.152.33.ip.goodrain.net/pc-service/api/delay?msg=1");
+        strings.add("http://8080.grd42ecd.0hpzibea.106.15.152.33.ip.goodrain.net/pc-service/api/helllo");
+        strings.add("http://8080.grd42ecd.0hpzibea.106.15.152.33.ip.goodrain.net/pc-service/api/delay");
+        strings.add("http://8080.grd42ecd.0hpzibea.106.15.152.33.ip.goodrain.net/pc-service/api/consumer");
 
 
 
-        strings.add("http://8080.grd42ecd.0hpzibea.106.15.152.33.ip.goodrain.net/book-service/api/helllo?msg=1");
-        strings.add("http://8080.grd42ecd.0hpzibea.106.15.152.33.ip.goodrain.net/book-service/api/delay?msg=1");
+        strings.add("http://8080.grd42ecd.0hpzibea.106.15.152.33.ip.goodrain.net/book-service/api/helllo");
+        strings.add("http://8080.grd42ecd.0hpzibea.106.15.152.33.ip.goodrain.net/book-service/api/delay");
 
 
         while (true){
             try {
                 Jsoup.connect(strings.get((int) (Math.random()*strings.size()))).ignoreContentType(true).get();
-                Thread.sleep(100);
+                Thread.sleep(50);
 
             } catch (Exception ignored) {
 

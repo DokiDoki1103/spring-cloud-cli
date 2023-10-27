@@ -1,4 +1,4 @@
-package com.example.web.gateway.mapper;
+package com.example.openfeign.mapper;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

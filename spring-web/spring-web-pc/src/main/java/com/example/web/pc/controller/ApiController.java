@@ -1,5 +1,7 @@
 package com.example.web.pc.controller;
 
+import com.example.openfeign.mapper.RemoteProviderService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,7 +17,14 @@ public class ApiController {
     public String hello() {
         return "Hello, pc-service";
     }
+    @Autowired
+    private RemoteProviderService remoteProviderService;
 
+    @GetMapping("/consumer")
+    public String consumer() {
+        String hello = remoteProviderService.Message("我是从pc过来的");
+        return hello;
+    }
     @GetMapping(value = "/delay", produces = "application/json")
     public Map<String, Object> delay() throws InterruptedException {
         int delay = new Random().nextInt(3000);

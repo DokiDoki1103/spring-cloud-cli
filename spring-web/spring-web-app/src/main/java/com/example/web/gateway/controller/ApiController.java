@@ -1,6 +1,6 @@
 package com.example.web.gateway.controller;
 
-import com.example.web.gateway.mapper.RemoteProviderService;
+import com.example.openfeign.mapper.RemoteProviderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
