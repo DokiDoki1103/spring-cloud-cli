@@ -25,8 +25,8 @@ public class ApiController {
     private RemoteProviderService remoteProviderService;
 
     @GetMapping("/consumer")
-    public String consumer(String msg) {
-        String hello = remoteProviderService.Message(msg);
+    public String consumer() {
+        String hello = remoteProviderService.Message("我是从app过来的");
         return hello;
     }
     @RequestMapping("/call/{name}")
