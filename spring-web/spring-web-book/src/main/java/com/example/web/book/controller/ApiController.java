@@ -10,7 +10,7 @@ import java.time.LocalTime;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
-
+@RequestMapping("/book-service/api")
 @RestController
 public class ApiController {
 
