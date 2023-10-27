@@ -11,7 +11,7 @@ public class Listener  implements ApplicationListener<ContextRefreshedEvent> {
     HttpRequest httpRequest;
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 30; i++) {
             httpRequest.send();
         }
     }
