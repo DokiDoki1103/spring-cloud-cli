@@ -8,25 +8,17 @@
         <artifactId>spring-web</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-
-    <groupId>com.example.web.gateway</groupId>
-    <artifactId>spring-web-app</artifactId>
-
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
     </dependencies>
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+
     <build>
         <plugins>
             <plugin>
@@ -35,7 +27,7 @@
                 <version>${spring-boot-version}</version>
                 <configuration>
                     <includeSystemScope>true</includeSystemScope>
-                    <mainClass>com.example.web.gateway.AppApplication</mainClass>
+                    <mainClass>com.example.web.book.BookApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>
@@ -47,4 +39,14 @@
             </plugin>
         </plugins>
     </build>
+
+    <groupId>com.example.web.book</groupId>
+    <artifactId>spring-web-book</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
 </project>
