@@ -1,6 +1,8 @@
 server:
   port: 8001
 spring:
+  redis:
+    host: ${REDIS_HOST}:${REDIS_PORT}
   application:
     name: spring-web-app
 

@@ -18,9 +18,12 @@ import java.util.Random;
 public class ApiController {
     @GetMapping("/hello")
     public String hello() {
+        redisUtils.set(String.valueOf(new Random().nextInt(1000)),String.valueOf(new Random().nextInt(1000)));
         return "Hello, app-service!";
     }
 
+    @Autowired
+    RedisUtils redisUtils;
     @Autowired
     private RemoteProviderService remoteProviderService;
 
