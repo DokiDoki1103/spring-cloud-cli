@@ -18,7 +18,7 @@ public class ApiController {
 
     @GetMapping(value = "/delay",produces = "application/json")
     public Map<String,Object> delay() throws InterruptedException {
-        int delay = new Random().nextInt(10000);
+        int delay = new Random().nextInt(3000);
         // 模拟慢调用
         Thread.sleep(new Random().nextInt(delay));
 

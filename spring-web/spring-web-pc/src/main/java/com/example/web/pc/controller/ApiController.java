@@ -16,16 +16,16 @@ public class ApiController {
         return "Hello, pc-service";
     }
 
-    @GetMapping(value = "/delay",produces = "application/json")
-    public Map<String,Object> delay() throws InterruptedException {
-        int delay = new Random().nextInt(10000);
+    @GetMapping(value = "/delay", produces = "application/json")
+    public Map<String, Object> delay() throws InterruptedException {
+        int delay = new Random().nextInt(3000);
         // 模拟慢调用
         Thread.sleep(new Random().nextInt(delay));
 
         Map<String, Object> res = new HashMap<>();
-        res.put("code",200);
-        res.put("msg","success");
-        res.put("delay",delay);
+        res.put("code", 200);
+        res.put("msg", "success");
+        res.put("delay", delay);
         return res;
     }
 }
