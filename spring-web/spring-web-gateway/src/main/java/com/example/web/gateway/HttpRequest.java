@@ -14,18 +14,18 @@ public class HttpRequest {
     public void send(){
         List<String> strings = new ArrayList<>();
 
-        strings.add("http://8080.grd42ecd.0hpzibea.106.15.152.33.ip.goodrain.net/app-service/api/consumer");
-        strings.add("http://8080.grd42ecd.0hpzibea.106.15.152.33.ip.goodrain.net/app-service/api/helllo");
-        strings.add("http://8080.grd42ecd.0hpzibea.106.15.152.33.ip.goodrain.net/app-service/api/delay");
+        strings.add("http://gateway.goodrain.com/app-service/api/consumer");
+        strings.add("http://gateway.goodrain.com/app-service/api/helllo");
+        strings.add("http://gateway.goodrain.com/app-service/api/delay");
 
-        strings.add("http://8080.grd42ecd.0hpzibea.106.15.152.33.ip.goodrain.net/pc-service/api/helllo");
-        strings.add("http://8080.grd42ecd.0hpzibea.106.15.152.33.ip.goodrain.net/pc-service/api/delay");
-        strings.add("http://8080.grd42ecd.0hpzibea.106.15.152.33.ip.goodrain.net/pc-service/api/consumer");
+        strings.add("http://gateway.goodrain.com/pc-service/api/helllo");
+        strings.add("http://gateway.goodrain.com/pc-service/api/delay");
+        strings.add("http://gateway.goodrain.com/pc-service/api/consumer");
 
 
 
-        strings.add("http://8080.grd42ecd.0hpzibea.106.15.152.33.ip.goodrain.net/book-service/api/helllo");
-        strings.add("http://8080.grd42ecd.0hpzibea.106.15.152.33.ip.goodrain.net/book-service/api/delay");
+        strings.add("http://gateway.goodrain.com/book-service/api/helllo");
+        strings.add("http://gateway.goodrain.com/book-service/api/delay");
 
 
         while (true){
