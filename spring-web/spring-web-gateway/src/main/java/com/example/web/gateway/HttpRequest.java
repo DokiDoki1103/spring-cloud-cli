@@ -14,18 +14,18 @@ public class HttpRequest {
     public void send(){
         List<String> strings = new ArrayList<>();
 
-        strings.add("http://gateway.goodrain.com/app-service/api/consumer");
-        strings.add("http://gateway.goodrain.com/app-service/api/helllo");
-        strings.add("http://gateway.goodrain.com/app-service/api/delay");
+        strings.add("http://gateway:8080/app-service/api/consumer");
+        strings.add("http://gateway:8080/app-service/api/helllo");
+        strings.add("http://gateway:8080/app-service/api/delay");
 
-        strings.add("http://gateway.goodrain.com/pc-service/api/helllo");
-        strings.add("http://gateway.goodrain.com/pc-service/api/delay");
-        strings.add("http://gateway.goodrain.com/pc-service/api/consumer");
+        strings.add("http://gateway:8080/pc-service/api/helllo");
+        strings.add("http://gateway:8080/pc-service/api/delay");
+        strings.add("http://gateway:8080/pc-service/api/consumer");
 
 
 
-        strings.add("http://gateway.goodrain.com/book-service/api/helllo");
-        strings.add("http://gateway.goodrain.com/book-service/api/delay");
+        strings.add("http://gateway:8080/book-service/api/helllo");
+        strings.add("http://gateway:8080/book-service/api/delay");
 
 
         while (true){
