@@ -16,7 +16,7 @@ public class HttpRequest {
 
         strings.add("http://gateway:8080/app-service/api/consumer");
         strings.add("http://gateway:8080/app-service/api/helllo");
-        strings.add("http://gateway.goodrain.com/app-service/api/delay");
+        strings.add("http://gateway:8080/app-service/api/delay");
 
         strings.add("http://gateway:8080/pc-service/api/helllo");
         strings.add("http://gateway:8080/pc-service/api/delay");
