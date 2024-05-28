@@ -1,6 +1,7 @@
 package com.example.web.gateway;
 
 import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
@@ -30,7 +31,8 @@ public class HttpRequest {
 
         while (true){
             try {
-                Jsoup.connect(strings.get((int) (Math.random()*strings.size()))).ignoreContentType(true).get();
+                Document document = Jsoup.connect(strings.get((int) (Math.random() * strings.size()))).ignoreContentType(true).get();
+                System.out.println(document.body());
                 Thread.sleep(50);
 
             } catch (Exception ignored) {
